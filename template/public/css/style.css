@@ -7,9 +7,20 @@ and open the template in the editor.
     Created on : Nov 5, 2014, 10:55:10 PM
     Author     : Thanh Duoc
 */
+@font-face {
+    font-family: Exotc350;
+    src: url(../fonts/3562.ttf);
+}
 body{
-    font-family: Arial;
+    font-family: Exotc350;
     font-size: 14px;
+}
+.wallpaper{
+    width: 1000px;
+    margin: auto;
+}
+.arrow-right:hover, .arrow-left:hover{ 
+    opacity: 0.9;
 }
 .content{
     width: 600px;
@@ -126,16 +137,19 @@ body{
 .feedback{
     background: #ffcc00;
     border-radius: 0px 3px 3px 0px;
-    height: 115px;
     width: 25px;
     position: fixed;
     top: 300px;
     word-break: break-all;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     font-weight: bold;
     color: #fff;
     line-height: 22px;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    z-index: 100;
 }
 .set-color{
     background: #ffcc00;
@@ -145,4 +159,158 @@ body{
     position: fixed;
     right: 5px;
     top: 15px;
+}
+.feedback span, .posting span{
+    display: block;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    line-height: 10px;
+}
+.arrow-left{
+    display: block;
+    width: 65px;
+    text-align: center;
+    position: absolute;
+    margin-top: 275px;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.arrow-right{
+    display: block;
+    width: 65px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    margin-top: -345px;
+    margin-right: 120px;
+}
+.feedback:hover{
+    margin-left: 5px;
+    -webkit-transition: margin-left 0.5s ease-in-out ;
+    -moz-transition: margin-left 0.5s ease-in-out ;
+    -ms-transition: margin-left 0.5s ease-in-out ;
+    -o-transition: margin-left 0.5s ease-in-out ;
+    transition: margin-left 0.5s ease-in-out;
+}
+
+.main-content{
+    width: 395px;
+    margin: auto;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 245px;
+    text-align: center;
+    z-index: 1;
+}
+.main-content img{
+    width: 250px;
+}
+.main-content input[name=postcode], .main-content input[name=search]{
+    border-radius: 3px;
+    height: 30px;
+    width: 80px;
+    border: 1px solid #a6ce39;
+    text-align: center;
+}
+.main-content input[name=search]{
+    width: 200px;
+    text-align: left;
+    height: 33px;
+    margin-left: 15px;
+}
+.main-content input[name=submit]{
+    height: 33px;
+    display: block;
+    float: right;
+    width: 33px;
+    border: 1px solid #a6ce39;
+    background: url("../images/search.jpg");
+    background-size: 30px;
+    position: absolute;
+    right: 28px;
+    top: 75px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.posting{
+    background: #A6CE38;
+    font-size: 17px;
+    padding-top: 15px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 195px;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+.posting:hover{
+    color: #FFCC00;
+}
+.color{
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.color-active-1{
+    background: #ec008c;
+    margin-top: 75px;
+    border-top: 8px solid #fff;
+}
+.color-active-2{
+    background: #00aeef;
+}
+.color-active-3{
+    background: #a3238e;
+    border-bottom: 8px solid #fff;
+}
+.shadow{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #fff;
+    z-index: 10;
+    top: 0;
+}
+.popup{
+    width: 760px;
+    height: 600px;
+    margin: auto;
+    /*background: #666666;*/
+    border: 1px solid #FFCC00;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+.popup-header{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #FFCC00;
+    border-radius: 10px;
+}
+.popup-header span{
+    font-size: 35px;
+    line-height: 55px;
+    margin-left: 50px;
+    color: #a6ce39;
+}
+.popup-header .close{
+    float: right;
+    width: 60px;
+    text-align: center;
+    height: 100%;
+    display: block;
+    border-left: 1px solid #FFCC00;
+    border-radius: 10px;
+    font-size: 45px;
+    font-family: arial;
+    line-height: 60px;
+    color: #a6ce39;
+    cursor: pointer;
+}
+.popup-header .close:hover{
+    color: #FFCC00;
 }
