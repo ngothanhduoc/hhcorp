@@ -15,6 +15,9 @@ body{
     font-family: Exotc350;
     font-size: 14px;
 }
+input:focus{
+    border: 1px solid #a6ce39;
+}
 .wallpaper{
     width: 1000px;
     margin: auto;
@@ -112,7 +115,9 @@ body{
 .navi-bottom{
     display: block;
     width: 100%;
-
+    height: 20px;
+    position: absolute;
+    top:0;
 }
 .navi-left, .navi-right{
     width: 50%;
@@ -154,11 +159,11 @@ body{
 .set-color{
     background: #ffcc00;
     width: 25px;
-    height: 95%;
+    height: 100%;
     display: block;
     position: fixed;
     right: 5px;
-    top: 15px;
+    top: 0;
 }
 .feedback span, .posting span{
     display: block;
@@ -187,15 +192,23 @@ body{
     margin-top: -345px;
     margin-right: 120px;
 }
-.feedback:hover{
+.feedback:hover, .posting:hover{
     margin-left: 5px;
-    -webkit-transition: margin-left 0.5s ease-in-out ;
-    -moz-transition: margin-left 0.5s ease-in-out ;
-    -ms-transition: margin-left 0.5s ease-in-out ;
-    -o-transition: margin-left 0.5s ease-in-out ;
-    transition: margin-left 0.5s ease-in-out;
+    -webkit-transition: margin-left 0.3s ease-in-out ;
+    -moz-transition: margin-left 0.3s ease-in-out ;
+    -ms-transition: margin-left 0.3s ease-in-out ;
+    -o-transition: margin-left 0.3s ease-in-out ;
+    transition: margin-left 0.3s ease-in-out;
 }
-
+.posting:hover{
+    margin-left: -5px;
+    width: 30px;
+    -webkit-transition: all 0.3s ease-in-out ;
+    -moz-transition: all 0.3s ease-in-out ;
+    -ms-transition: all 0.3s ease-in-out ;
+    -o-transition: all 0.3s ease-in-out ;
+    transition: all 0.3s ease-in-out;
+}
 .main-content{
     width: 395px;
     margin: auto;
@@ -246,7 +259,7 @@ body{
     border-bottom: 4px solid #fff;
 }
 .posting:hover{
-    color: #FFCC00;
+    /*color: #FFCC00;*/
 }
 .color{
     border-top: 4px solid #fff;
@@ -272,7 +285,7 @@ body{
     width: 100%;
     height: 100%;
     position: fixed;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.73);
     z-index: 10;
     top: 0;
 }
@@ -280,7 +293,7 @@ body{
     width: 760px;
     height: 600px;
     margin: auto;
-    /*background: #666666;*/
+    background: #fff;
     border: 1px solid #FFCC00;
     border-radius: 10px;
     margin-top: 40px;
@@ -315,12 +328,14 @@ body{
     color: #FFCC00;
 }
 .deg0{
-    transform: rotate(0deg);
+    transform: rotate(45deg);
 }
 .deg45{
     transform: rotate(-45deg);
 }
-
+.deg00{
+    transform: rotate(0deg);
+}
 .circle{
     transform: rotate(0deg);
 }
@@ -330,7 +345,7 @@ body{
 .navi-popup{
     width: 245px;
     margin: auto;
-    height: 90px;
+    height: 75px;
     text-align: center;
 }
 .tab{
@@ -383,7 +398,8 @@ body{
     border: 1px solid #FC0;
     border-radius: 5px;
     width: 100%; 
-    height: 200px
+    height: 200px;
+    margin-bottom: 10px;
 }
 .popup-box-left{
     text-align: center;
@@ -401,4 +417,44 @@ body{
     display: block;
     width: 100%;
     height: 100px;
+}
+.popup-box-right span{
+    float: left;
+    font-size: 16px;
+    color: #919396;
+    line-height: 50px;
+}
+.box-num{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #FC0;
+    border-radius: 8px;
+    float: left;
+    line-height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.num-asw{
+    width: 50px !important;
+    height: 50px !important;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #FC0 !important;
+    border-radius: 8px !important;
+    float: left;
+    line-height: 50px;
+    margin-left: 20px;
+    padding-left: 0px !important;
+}
+.submit{
+    width: 100px !important;
+    float: right;
+    background: #a6ce39;
+    border: none !important;
+    color: #fff; 
+}
+.space-span{
+    margin-bottom: 5px;
 }

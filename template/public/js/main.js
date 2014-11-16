@@ -1,19 +1,22 @@
 $(function () {
     //load giao dien cac vong tron
+    var total = window.innerHeight;
+    top_content();
+    bottom_nav();
+    function top_content() {
+        $he = total - 604;
+        $re = $he / 2;
+        $('.content').css('margin-top', $re);
+    }
+    function bottom_nav(){
+        $he = total - 20;
+        $('.navi-bottom').css('margin-top', $he);
+    }
     loadCirle();
     $('.shadow').hide();
-//    $('.arrow-left').click(function () {
-//        $('.block').removeClass('animated zoomIn');
-//        $('.block').addClass('animated flipOutX');
-//        callback();
-//    });
-//    $('.arrow-right').click(function () {
-//        $('.block').removeClass('animated zoomIn');
-//        $('.block').addClass('animated flipOutX');
-//        callback();
-//    });
+    var position = '';
 
-    $('.arrow-left,.arrow-right').rotate({
+    $('.arrow-right').rotate({
         bind:
                 {
                     click: function () {
@@ -21,7 +24,20 @@ $(function () {
                         $('.block').removeClass('animated zoomIn');
                         $('.block').addClass('animated flipOutX');
                         callback();
+                        position = 'right';
+                    }
+                }
 
+    });
+    $('.arrow-left').rotate({
+        bind:
+                {
+                    click: function () {
+                        $('.content').rotate({angle: 0, animateTo: -45, easing: $.easing.easeInOutExpo});
+                        $('.block').removeClass('animated zoomIn');
+                        $('.block').addClass('animated flipOutX');
+                        callback();
+                        position = 'left';
                     }
                 }
 
@@ -31,9 +47,9 @@ $(function () {
             function () {
                 $('.shadow').removeClass('animated zoomIn');
                 $('.shadow').addClass('animated zoomOut');
-                
+
                 setTimeout(function () {
-                   $('.shadow').hide();
+                    $('.shadow').hide();
                 }, 1000);
             }
     )
@@ -46,6 +62,15 @@ $(function () {
         setTimeout(function () {
             loadCirle();
         }, 1000);
+        setTimeout(function () {
+            $style = $('.content').attr('style');
+            if ($style != undefined) {
+                $('.content').attr('style', '');
+                $('.circle-main').removeClass('deg0');
+                $('.circle-main').removeClass('deg45');
+                $('.circle-main').addClass('deg00');
+            }
+        }, 1010);
     }
     function loadCirle() {
         $.ajax({
@@ -60,8 +85,17 @@ $(function () {
 
             hoverCircle();
             $style = $('.content').attr('style');
-            if ($style != undefined)
-                $('.circle-main').addClass('deg45');
+            if ($style != undefined) {
+                if (position == 'right') {
+                    $('.circle-main').addClass('deg45');
+                    $('.circle-main').removeClass('deg0');
+                }
+                if (position == 'left') {
+                    $('.circle-main').addClass('deg0');
+                    $('.circle-main').removeClass('deg45');
+                }
+            }
+
         }).fail(function () {
             alert('Có lỗi ! Không kết nối đến dữ liệu được.');
         });
@@ -71,8 +105,16 @@ $(function () {
                 function () {
                     $(this).addClass('animated pulse');
                     $style = $('.content').attr('style');
-                    if ($style != undefined)
-                        $('.circle-main').addClass('deg45');
+                    if ($style != undefined) {
+                        if (position == 'right') {
+                            $('.circle-main').addClass('deg45');
+                            $('.circle-main').removeClass('deg0');
+                        }
+                        if (position == 'left') {
+                            $('.circle-main').addClass('deg0');
+                            $('.circle-main').removeClass('deg45');
+                        }
+                    }
                 },
                 function () {
                     $(this).removeClass('animated pulse');
