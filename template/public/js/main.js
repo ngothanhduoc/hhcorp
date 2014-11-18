@@ -1,6 +1,7 @@
 $(function () {
     //load giao dien cac vong tron
     var total = window.innerHeight;
+    
     top_content();
     bottom_nav();
     function top_content() {
@@ -70,7 +71,7 @@ $(function () {
                 $('.circle-main').removeClass('deg45');
                 $('.circle-main').addClass('deg00');
             }
-        }, 1010);
+        }, 1050);
     }
     function loadCirle() {
         $.ajax({
@@ -122,4 +123,10 @@ $(function () {
                 }
         );
     }
+    ;
+    $("div.tab").click(function(){
+        $("div.tab").removeClass('tab_active');
+        $(this).addClass('tab_active');
+    })
+    
 })
