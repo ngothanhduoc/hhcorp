@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 18, 2014, 10:35:29 PM
+    Author     : Thanh Duoc
+*/
+
+@font-face {
+    font-family: Exotc350;
+    src: url(../fonts/3562.ttf);
+}
+body{
+    font-family: Arial;
+    font-size: 14px;
+}
+.posting{
+    background: #A6CE38;
+    font-size: 17px;
+    padding-top: 15px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 45px;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    width: 25px;
+    position: fixed;
+}
+.posting span{
+    display: block;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    line-height: 10px;
+    font-family: Exotc350;
+}
+.space-span{
+    margin-bottom: 5px;
+}
+.posting:hover{
+    margin-left: 5px;
+    -webkit-transition: margin-left 0.3s ease-in-out ;
+    -moz-transition: margin-left 0.3s ease-in-out ;
+    -ms-transition: margin-left 0.3s ease-in-out ;
+    -o-transition: margin-left 0.3s ease-in-out ;
+    transition: margin-left 0.3s ease-in-out;
+}
+.wallpaper{
+    width: 960px;
+    margin: auto;
+}
+.content{
+    width: 960px;
+    margin: auto;
+    min-height: 500px;
+    float: left;
+    border: 1px solid #A6CE38;
+    margin-top: 30px;
+}
+.content img{
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.content div#title{
+    color: #A6CE39;
+    margin-left: 42px;
+    margin-top: 20px;
+}
+.box-content{
+    float: left;
+    width: 400px;
+    margin-left: 42px;
+    /*background: #a6ce39;*/
+    min-height: 100px;
+    margin-top: 30px;
+}
+.box-right{
+    width: 470px;
+    margin-left: 20px;
+}
+.input-left{
+    width: 340px;
+    height: 35px;
+    border: 1px solid #FC0;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    float: left;
+}
+.char_aws{
+    text-decoration: underline;
+    float: left;
+    font-size: 18px;
+    line-height: 40px;
+    margin-left: 10px;
+    color: #D5D5D5;
+    cursor: help;
+}
+.input-order-1{
+    width: 200px;
+}
+.checkbox-info{
+    float: left;
+    width: 165px;
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: #96989A;
+}
