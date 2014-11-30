@@ -1,7 +1,7 @@
 $(function () {
     //load giao dien cac vong tron
     var total = window.innerHeight;
-    
+
     top_content();
     bottom_nav();
     function top_content() {
@@ -9,22 +9,32 @@ $(function () {
         $re = $he / 2;
         $('.content').css('margin-top', $re);
     }
-    function bottom_nav(){
+    function bottom_nav() {
         $he = total - 20;
         $('.navi-bottom').css('margin-top', $he);
     }
     loadCirle();
     $('.shadow').hide();
     var position = '';
-
+    var defer = $.Deferred();
     $('.arrow-right').rotate({
         bind:
                 {
                     click: function () {
-                        $('.content').rotate({angle: 0, animateTo: 45, easing: $.easing.easeInOutExpo});
-                        $('.block').removeClass('animated zoomIn');
-                        $('.block').addClass('animated flipOutX');
-                        callback();
+                        $('.content').animate({borderSpacing: 45}, {
+                            step: function (now, fx) {
+                                $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                                $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                                $(this).css('transform', 'rotate(' + now + 'deg)');
+                            },
+                            duration: 400,
+                            complete: function () {
+                                callback();
+                            }
+                        }, 'linear');
+                        $('.block').removeClass('animated_fast zoomIn');
+                        $('.block').addClass('animated_fasts flipOutX');
+                        
                         position = 'right';
                     }
                 }
@@ -34,10 +44,22 @@ $(function () {
         bind:
                 {
                     click: function () {
-                        $('.content').rotate({angle: 0, animateTo: -45, easing: $.easing.easeInOutExpo});
-                        $('.block').removeClass('animated zoomIn');
-                        $('.block').addClass('animated flipOutX');
-                        callback();
+
+                        $('.content').animate({borderSpacing: -45}, {
+                            step: function (now, fx) {
+                                $(this).css('-webkit-transform', 'rotate(' + now + 'deg)');
+                                $(this).css('-moz-transform', 'rotate(' + now + 'deg)');
+                                $(this).css('transform', 'rotate(' + now + 'deg)');
+                            },
+                            duration: 400,
+                            complete: function () {
+                                callback();
+                            }
+                        }, 'linear');
+
+                        $('.block').removeClass('animated_fast zoomIn');
+                        $('.block').addClass('animated_fasts flipOutX');
+
                         position = 'left';
                     }
                 }
@@ -60,21 +82,12 @@ $(function () {
     })
 
     function callback() {
-        setTimeout(function () {
+        $.when(setTimeout(function () {
             loadCirle();
-        }, 1000);
-        setTimeout(function () {
-            $style = $('.content').attr('style');
-            if ($style != undefined) {
-                $('.content').attr('style', '');
-                $('.circle-main').removeClass('deg0');
-                $('.circle-main').removeClass('deg45');
-                $('.circle-main').addClass('deg00');
-            }
-        }, 1050);
+        }, 50))
     }
     function loadCirle() {
-        $.ajax({
+        $.when($.ajax({
             url: './vongtron.html',
             type: 'GET',
             dataType: '',
@@ -82,29 +95,39 @@ $(function () {
         }).done(function (response) {
             $('.content').html(response);
 //            $('.content').addClass('animated zoomIn');
-            $('.block').addClass('animated zoomIn');
+            $('.block').addClass('animated_fast zoomIn');
 
-            hoverCircle();
+//            hoverCircle();
             $style = $('.content').attr('style');
             if ($style != undefined) {
                 if (position == 'right') {
                     $('.circle-main').addClass('deg45');
                     $('.circle-main').removeClass('deg0');
+                    $('.hover-circle').removeClass('ch-info');
                 }
                 if (position == 'left') {
                     $('.circle-main').addClass('deg0');
                     $('.circle-main').removeClass('deg45');
+                    $('.hover-circle').removeClass('ch-info');
                 }
-            }
 
-        }).fail(function () {
-            alert('Có lỗi ! Không kết nối đến dữ liệu được.');
-        });
+            }
+            $('.hover-circle').addClass('ch-info');
+            $('.ch-info').css('margin-left', '0px');
+        })
+                ).pipe(function () {
+            $style = $('.content').attr('style');
+            if ($style != undefined) {
+                $('.content').attr('style', '');
+                top_content();
+            }
+        })
+                ;
     }
     function hoverCircle() {
         $('.circle').hover(
                 function () {
-                    $(this).addClass('animated pulse');
+                    $(this).addClass('animated_fast pulse');
                     $style = $('.content').attr('style');
                     if ($style != undefined) {
                         if (position == 'right') {
@@ -118,15 +141,15 @@ $(function () {
                     }
                 },
                 function () {
-                    $(this).removeClass('animated pulse');
+                    $(this).removeClass('animated_fast pulse');
 
                 }
         );
     }
     ;
-    $("div.tab").click(function(){
+    $("div.tab").click(function () {
         $("div.tab").removeClass('tab_active');
         $(this).addClass('tab_active');
     })
-    
+
 })
