@@ -50,15 +50,15 @@ body{
     transition: margin-left 0.3s ease-in-out;
 }
 .wallpaper{
-    width: 960px;
+    width: 1010px;
     margin: auto;
 }
 .content{
-    width: 960px;
+    width: 1010px;
     margin: auto;
     min-height: 500px;
     float: left;
-    border: 1px solid #A6CE38;
+    /*border: 1px solid #A6CE38;*/
     margin-top: 30px;
     margin-bottom: 50px;
 }
@@ -83,7 +83,7 @@ body{
 }
 .box-right{
     width: 411px;
-    margin-left: 0px;
+    margin-left: 90px;
 }
 .input-left{
     width: 340px;
@@ -258,4 +258,13 @@ input[type="checkbox"]{
     margin-top: 20px;
     border: none;
     border-radius: 4px;
+}
+div.block-day .input-radio{
+    margin-top: 5px;
+    margin-right: 8px;
+    background: #A6CE39;
+    border: 1px solid #A6CE39;
+}
+.logo-small{
+    width: 200px !important;
 }

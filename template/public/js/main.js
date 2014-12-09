@@ -113,7 +113,7 @@ $(function () {
 
             }
             $('.hover-circle').addClass('ch-info');
-            $('.ch-info').css('margin-left', '0px');
+            $('.ch-info').css('margin-left', '-7px');
         })
                 ).pipe(function () {
             $style = $('.content').attr('style');
