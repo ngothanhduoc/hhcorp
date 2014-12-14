@@ -6,24 +6,157 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./public/css/reset.css">
         <link rel="stylesheet" type="text/css" href="./public/css/freeadposting.css">
         <link rel="stylesheet" type="text/css" href="./public/css/animate.css">
-        <script src="public/js/jquery.js"></script>
-        <script src="public/js/freead.js"></script>
+        <script src="public/js/jquery-2.1.1.min.js"></script>
+        
+        <script src="public/js/jquery.als-1.7.min.js"></script>
         <title>HHCORP</title>
     </head>
+    <script>
+        $(document).ready(function () {
+            $("#lista1").als({
+                visible_items: 6,
+                scrolling_items: 2,
+                orientation: "horizontal",
+                circular: "yes",
+                autoscroll: "no",
+                interval: 5000,
+                speed: 500,
+                easing: "linear",
+                direction: "right",
+                start_from: 0
+            });
+        });
+    </script>
     <body>
         <div class="wallpaper">
             <div class="content animated zoomIn">
                 <img src="./public/images/logo-small.jpg" class="logo-small" />
                 <div class="menu">
-                    <ul>
-                        <li></li>
-                    </ul>
+                    <div class="hr"></div>
+                    <div id="lista1" class="als-container">
+                        <span class="als-prev">
+                            <!--<img src="./public/images/thin_left_arrow_333.png" alt="prev" title="previous" />-->
+                            <
+                        </span>
+                        <div class="als-viewport">
+                            <ul class="als-wrapper">
+                                <li class="als-item active-text">
+                                    <div class="menu-circle active-menu">
+                                        <div class="menu-circle-chilr active-menu-chir">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    calculator
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    light bulb
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    card
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    chess
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    alarm clock
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    scissors
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    heart
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    pin
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    mobile phone
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    camera
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    music note
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    umbrella
+                                </li>
+                                <li class="als-item">
+                                    <div class="menu-circle">
+                                        <div class="menu-circle-chilr">
+                                            <img src="./public/images/icon.png" alt="calculator" title="calculator" />
+                                        </div>
+                                    </div>
+                                    television
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="als-next">
+<!--                            <img src="./public/images/thin_right_arrow_333.png" alt="next" title="next" />-->
+                                >
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

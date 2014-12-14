@@ -266,5 +266,142 @@ div.block-day .input-radio{
     border: 1px solid #A6CE39;
 }
 .logo-small{
-    width: 200px !important;
+    width: 260px !important;
+    margin-left: 0px !important;
+}
+.menu{
+    float: right;
+    height: 70px;
+    width: 666px;
+    margin-top: 40px;
+}
+/********************************
+ * generic als elements styling
+ ********************************/
+.als-container {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.als-viewport {
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+}
+
+.als-wrapper {
+    position: relative;
+    list-style: none;
+}
+
+.als-item {
+    position: relative;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+}
+
+.als-prev, .als-next {
+    position: absolute;
+    cursor: pointer;
+    clear: both;
+}
+
+
+/**************************
+ * specific als elements
+ * styling for #lista1
+ **************************/
+
+#lista1 {
+    /*margin: 60px auto 80px auto;*/
+}
+
+#lista1 .als-item {
+    margin: 0px 5px;
+    min-height: 130px;
+    min-width: 100px;
+    text-align: center;
+    color: #a6ce39;
+    font-family: Exotc350;
+    font-size: 16px;
+}
+
+#lista1 .als-item img, #lista1 .als-prev img, #lista1 .als-next img {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    margin: 0px;
+    width: auto !important;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+#lista1 .als-prev, #lista1 .als-next {
+    top: 58px;
+    width: 15px;
+    height: 22px;
+}
+
+#lista1 .als-prev {
+    left: -50px;
+    font-size: 70px;
+    margin-top: -50px;
+    color: #a6ce39;
+    font-family: Exotc350;
+}
+
+#lista1 .als-next {
+    right: -10px;
+    font-size: 70px;
+    margin-top: -50px;
+    color: #a6ce39;
+    font-family: Exotc350;
+}
+.menu-circle{
+    width: 70px;
+    height: 70px;
+    border: 1px dashed #a6ce39;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 10px;
+    background: #fff; 
+}
+.menu-circle-chilr{
+    background: #a6ce39;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    text-align: center;
+}
+.menu-circle-chilr img{
+    height: 30px;
+    top: 15px;
+    left: 16px;
+}
+.hr{
+    height: 35px;
+    border-bottom: 1px dashed #a6ce39;
+    display: block;
+    position: absolute;
+    width: 466px;
+    margin-left: 99px;
+}
+.active-menu-chir{
+    background: rgba(255, 204, 0, 0.86);
+    color: rgba(255, 204, 0, 0.86);
+}
+.active-menu{
+    border: 1px dashed rgba(255, 204, 0, 0.86);
+    color: rgba(255, 204, 0, 0.86);
+}
+.active-text{
+    color: rgba(255, 204, 0, 0.86) !important;
 }
