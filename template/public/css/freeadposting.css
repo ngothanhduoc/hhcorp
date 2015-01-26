@@ -388,7 +388,7 @@ div.block-day .input-radio{
     left: 16px;
 }
 .hr{
-    height: 35px;
+    height: 5px;
     border-bottom: 1px dashed #a6ce39;
     display: block;
     position: absolute;
@@ -536,4 +536,43 @@ span.name-company {
     text-align: right;
     color: #A6CE38;
     padding-right: 5px;
+}
+
+.navi-bottom{
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: -120px;
+}
+.navi-left, .navi-right{
+    width: 40%;
+    float: left;
+    text-align: left;
+}
+.navi-right{
+    text-align: right;
+    font-weight: bold;
+    position: relative;
+    width: 60%;
+}
+.navi-bottom ul{
+    display: inline-block;
+}
+.navi-bottom ul a{
+    color: #666666;
+}
+.navi-bottom ul a:hover{
+    color: #a6ce39;
+}
+.navi-bottom ul li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    padding: 0px 25px;
+    line-height: 55px;
+}
+.div-loading{
+    display: block;
+    position: relative;
 }
