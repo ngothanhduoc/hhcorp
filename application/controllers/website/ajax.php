@@ -55,7 +55,7 @@ class Ajax extends CI_Controller {
     public function getLatLong($address) {
 
         $address = str_replace(' ', '+', $address);
-        $url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&sensor=false';
+        $url = 'http://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&sensor=true';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

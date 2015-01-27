@@ -69,7 +69,7 @@
             $($class).show();
         },
         endLoading: function ($class) {
-            $($class).hide();
+            $($class).slideUp();
         },
     }
 

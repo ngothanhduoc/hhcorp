@@ -1154,13 +1154,17 @@ class Admin_Ajax extends MY_Controller {
                 $Id = $arrParam['id'];
 
                 $Params['image_small'] = $arrParam['image_small'];
-//                $Params['image_big'] = $arrParam['image_big'];
+                $Params['image_big'] = $arrParam['image_big'];
                 $Params['name'] = $arrParam['name'];
                 $Params['description'] = $arrParam['description'];
+                $Params['address'] = $arrParam['address'];
+                $Params['rate'] = $arrParam['rate'];
+                $Params['open_date'] = $arrParam['open_date'];
+                $Params['phone'] = $arrParam['phone'];
                 
                 $this->m_backend->_table = 'group_product';
                 $this->m_backend->_key = 'name';
-                $game = $this->m_backend->get_by_id($this->security->xss_clean($arrParam['type_name']));
+                $game = $this->m_backend->get_by_id($this->security->xss_clean($arrParam['id_group_product']));
                 $Params['id_group_product'] = $game['id_group_product'];
                 
                 if (empty($Id) === FALSE && is_numeric($Id)) {
